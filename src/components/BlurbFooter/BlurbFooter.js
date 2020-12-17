@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import CommentButton from '../CommentButton/CommentButton';
 import DateAndAuthor from '../DateAndAuthor/DateAndAuthor';
 
 class BlurbFooter extends Component {
@@ -6,7 +7,11 @@ class BlurbFooter extends Component {
     const someDate = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
     return (
       <div>
-        <p><DateAndAuthor someDate={someDate.toLocaleDateString()} author="Riker" /> | <span>Comment button</span></p>
+        <p>
+          <DateAndAuthor someDate={someDate.toLocaleDateString()} author="Riker" /> 
+          &nbsp;|&nbsp;  
+          <CommentButton />
+        </p>
       </div>
     );
   }

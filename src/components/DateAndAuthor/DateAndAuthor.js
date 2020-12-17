@@ -6,7 +6,9 @@ class DateAndAuthor extends Component {
     const author = this.props.author
     return (
       <span>
-        <span>{someDate}</span> <span>by {author}</span>
+        {someDate}
+        &nbsp;by <a href="https://memory-alpha.fandom.com/wiki/William_T._Riker" target="_blank"
+          rel="noopener noreferrer">{author}</a>
       </span>
     );
   }
