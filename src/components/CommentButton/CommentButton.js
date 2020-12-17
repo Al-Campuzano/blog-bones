@@ -1,13 +1,15 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
-class CommentButton extends Component {
-  render() {
-    return (
-      <span>
-        <button type="button">Leave a comment</button>
-      </span>
-    );
-  }
+function CommentButton() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <span>
+      <button type="button" className="with-hooks" onClick={() => setCount(count + 1)}>
+        {count === 0 ? "Leave a comment" : `${count} comments`}
+      </button>
+    </span>
+  );
 }
 
 export default CommentButton;
