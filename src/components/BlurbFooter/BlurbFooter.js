@@ -8,7 +8,7 @@ class BlurbFooter extends Component {
     return (
       <div>
         <p>
-          <DateAndAuthor someDate={someDate.toLocaleDateString()} author="Riker" /> 
+          <DateAndAuthor date={someDate.toLocaleDateString()} author="Riker" /> 
           &nbsp;|&nbsp;  
           <CommentButton />
         </p>
