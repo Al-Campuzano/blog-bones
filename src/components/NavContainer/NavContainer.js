@@ -1,4 +1,8 @@
 import React from "react";
+import Blog from '../Blog/Blog';
+import Custom from '../Custom/Custom';
+import Subscribers from '../Subscribers/Subscribers';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,7 +15,7 @@ function NavContainer() {
     <Router>
       <div>
         <nav>
-          <ul>
+          <ul className="main-nav">
             <li>
               <Link to="/">Blog</Link>
             </li>
@@ -37,18 +41,6 @@ function NavContainer() {
       </div>
     </Router>
   );
-}
-
-function Custom() {
-  return <h2>Custom Blog Page</h2>
-}
-
-function Subscribers() {
-  return <h2>Subscribers Page</h2>
-}
-
-function Blog() {
-  return <h2>Blog Page</h2>
 }
 
 export default NavContainer;
