@@ -22,7 +22,7 @@ function NavContainer() {
               <Link to="/">Blog</Link>
             </li>
             <li>
-              <Link to="/custom">Custom Blog Page</Link>
+              <Link to="/polaris">Polaris Blog Page</Link>
             </li>
             <li>
               <Link to="/subscribers">Subscribers</Link>
@@ -36,7 +36,7 @@ function NavContainer() {
           </ul>
         </nav>
         <Switch>
-          <Route path="/custom">
+          <Route path="/polaris">
             <Custom />
           </Route>
           <Route path="/subscribers">
