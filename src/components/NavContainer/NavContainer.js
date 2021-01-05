@@ -1,5 +1,7 @@
 import React from "react";
 import Blog from '../Blog/Blog';
+import Posts from '../Posts/Posts';
+import NewPost from '../NewPost/NewPost';
 import Custom from '../Custom/Custom';
 import Subscribers from '../Subscribers/Subscribers';
 
@@ -25,6 +27,12 @@ function NavContainer() {
             <li>
               <Link to="/subscribers">Subscribers</Link>
             </li>
+            <li>
+              <Link to="/posts">Posts</Link>
+            </li>
+            <li>
+              <Link to="/new">New Post</Link>
+            </li>
           </ul>
         </nav>
         <Switch>
@@ -33,6 +41,12 @@ function NavContainer() {
           </Route>
           <Route path="/subscribers">
             <Subscribers />
+          </Route>
+          <Route path="/posts">
+            <Posts />
+          </Route>
+          <Route path="/new">
+            <NewPost />
           </Route>
           <Route path="/">
             <Blog />
