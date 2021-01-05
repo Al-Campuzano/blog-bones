@@ -18,10 +18,16 @@
     "react-scripts": "4.0.1",
     "web-vitals": "^0.2.4"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "//.(jpg|png|jpeg)$": "<rootDir>/__mocks__/fileMock.js",
+      "//.(css|less)$": "identity-obj-proxy"
+    }
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -41,5 +47,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@shopify/react-testing": "^2.2.0",
+    "identity-obj-proxy": "^3.0.0",
+    "react-test-renderer": "^17.0.1"
   }
 }
