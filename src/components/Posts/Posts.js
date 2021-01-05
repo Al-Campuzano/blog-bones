@@ -1,6 +1,5 @@
 import React from "react";
-import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
+import { useQuery, gql } from '@apollo/client';
 import Post from "../Post";
 
 const POSTS_QUERY = gql`
@@ -16,24 +15,20 @@ const POSTS_QUERY = gql`
 `;
 
 function Posts() {
+  const { loading, error, data } = useQuery(POSTS_QUERY);
+  if (loading) return <h3>Loading...</h3>;
+  if (error) {
+    console.error(error);
+    return <h2>Error...</h2>;
+  }
+
   return(
-    <Query query={POSTS_QUERY}>
-      {({ loading, error, data }) => {
-        if (loading) return <div>Fetching..</div>
-        if (error) return <div>Error!</div>
-        console.log(data);
-        return (
-          <section >
-            {data.microposts.map((post) => {
-              return (
-                <Post post={post}/>
-              );
-            })}
-          </section>
-        )
-      }}
-    </Query>
-  );
+    <section >
+      {data.microposts.map((post, index) => (
+          <Post key={`post--${index}`} post={post}/>
+      ))}
+    </section>
+  )
 }
 
 export default Posts;
