@@ -11,9 +11,9 @@
     "@testing-library/user-event": "^12.1.10",
     "apollo-boost": "^0.4.9",
     "graphql": "^15.4.0",
-    "react": "^17.0.1",
+    "react": "^16.0.1",
     "react-apollo": "^3.1.5",
-    "react-dom": "^17.0.1",
+    "react-dom": "^16.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "web-vitals": "^0.2.4"
@@ -56,6 +56,6 @@
     "@shopify/react-testing": "^2.2.0",
     "babel-jest": "^26.6.3",
     "identity-obj-proxy": "^3.0.0",
-    "react-test-renderer": "^17.0.1"
+    "react-test-renderer": "^16.0.1"
   }
 }
