@@ -2,7 +2,7 @@ import React from 'react'
 import {mount} from '@shopify/react-testing'
 import NavContainer from '../'
 import {Link} from 'react-router-dom'
-import {toContainReactComponent} from '@shopify/react-testing/matchers';
+import '@shopify/react-testing/matchers';
 
 describe('<NavContainer />', () => {
   it('has 4 menu items', () => {
