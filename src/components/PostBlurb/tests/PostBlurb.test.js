@@ -1,7 +1,7 @@
 import React from 'react'
-import {mount} from '@shopify/react-testing'
 import PostBlurb from '../'
 import BlurbFooter from '../../BlurbFooter'
+import {mount} from '@shopify/react-testing'
 import '@shopify/react-testing/matchers';
 
 describe('<PostBlurb />', () => {
