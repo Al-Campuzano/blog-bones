@@ -3,7 +3,6 @@ import Blog from '../Blog/Blog';
 import Posts from '../Posts/Posts';
 import NewPost from '../NewPost/NewPost';
 import Custom from '../Custom/Custom';
-import Subscribers from '../Subscribers/Subscribers';
 
 import {
   BrowserRouter as Router,
@@ -25,9 +24,6 @@ function NavContainer() {
               <Link to="/polaris">Polaris Blog Page</Link>
             </li>
             <li>
-              <Link to="/subscribers">Subscribers</Link>
-            </li>
-            <li>
               <Link to="/posts">Posts</Link>
             </li>
             <li>
@@ -38,9 +34,6 @@ function NavContainer() {
         <Switch>
           <Route path="/polaris">
             <Custom />
-          </Route>
-          <Route path="/subscribers">
-            <Subscribers />
           </Route>
           <Route path="/posts">
             <Posts />
