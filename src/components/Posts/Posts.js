@@ -25,8 +25,8 @@ function Posts() {
   return(
     <section >
       {console.log(data.microposts[0].content)}
-      {data.microposts.map((post, index) => (
-          <Post key={`post--${index}`} post={post}/>
+      {data.microposts.map((post) => (
+          <Post key={`post--${post.id}`} post={post}/>
       ))}
     </section>
   )

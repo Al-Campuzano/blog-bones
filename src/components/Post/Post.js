@@ -1,9 +1,9 @@
 import React from "react";
 
 
-function Post({post}) {
+function Post({post}, {key}) {
     return (
-      <article key={post.id}>
+      <article key={key}>
         <h3>{post.user.name}</h3>
         <p>{post.content}</p>
       </article>

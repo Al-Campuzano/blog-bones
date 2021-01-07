@@ -18,6 +18,22 @@ describe('<CommentButton />', () => {
     const wrapper = mount(<CommentButton />);
     const button = wrapper.find('button');
     button.trigger('onClick');
-    expect(button.text()).toBe('1 comments')
+    // console.log(button.text());
+    // console.log("Middle");
+    expect(button.text()).toBe('1 comments');
+    button.trigger('onClick');
+    // console.log(button.text());
+    // button.trigger('onClick');
+    // expect(button.text()).toBe('2 comments');
   });
+  
+  // it('test act method', () => {
+  //   const wrapper = mount(<CommentButton />);
+  //   const button = wrapper.find('button');
+  //   wrapper.act(() => {
+  //     button.trigger('onClick');
+  //     button.trigger('onClick');
+  //   });
+  //   expect(wrapper.find('button').text()).toBe('2 comments');
+  // });
 });
