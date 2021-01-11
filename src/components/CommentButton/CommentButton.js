@@ -5,7 +5,7 @@ function CommentButton() {
 
   return (
     <span>
-      <button type="button" className="with-hooks" onClick={() => setCount(count + 1)}>
+      <button type="button" className="with-hooks" onClick={() => setCount((prev) => prev + 1)}>
         {count === 0 ? "Leave a comment" : `${count} comments`}
       </button>
     </span>
