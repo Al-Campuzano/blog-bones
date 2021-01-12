@@ -1,6 +1,7 @@
 import React from 'react'
 import {mount} from '@shopify/react-testing'
 import CommentButton from '../CommentButton';
+import { act } from 'react-dom/test-utils';
 
 describe('<CommentButton />', () => {
   it('has a button with Leave A Comment text on first load', () => {
@@ -18,22 +19,19 @@ describe('<CommentButton />', () => {
     const wrapper = mount(<CommentButton />);
     const button = wrapper.find('button');
     button.trigger('onClick');
-    // console.log(button.text());
-    // console.log("Middle");
     expect(button.text()).toBe('1 comments');
     button.trigger('onClick');
-    // console.log(button.text());
-    // button.trigger('onClick');
-    // expect(button.text()).toBe('2 comments');
+    button.trigger('onClick');
+    expect(button.text()).toBe('3 comments');
   });
   
-  // it('test act method', () => {
-  //   const wrapper = mount(<CommentButton />);
-  //   const button = wrapper.find('button');
-  //   wrapper.act(() => {
-  //     button.trigger('onClick');
-  //     button.trigger('onClick');
-  //   });
-  //   expect(wrapper.find('button').text()).toBe('2 comments');
-  // });
+  it('test act method', () => {
+    const wrapper = mount(<CommentButton />);
+    const button = wrapper.find('button');
+    act(() => {
+      button.trigger('onClick');
+      button.trigger('onClick');
+    });
+    expect(wrapper.find('button').text()).toBe('2 comments');
+  });
 });

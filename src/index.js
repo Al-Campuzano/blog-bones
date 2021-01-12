@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {AppProvider} from '@shopify/polaris';
+import enTranslations from '@shopify/polaris/locales/en.json';
 
 import '@shopify/polaris/dist/styles.css';
 
@@ -14,9 +16,11 @@ const client = new ApolloClient({
 });
 
 ReactDOM.render(
+  <AppProvider i18n={enTranslations}>
     <ApolloProvider client={client}>
       <App />
-    </ApolloProvider>,
+    </ApolloProvider>
+  </AppProvider>,
   document.getElementById('root')
 );
 

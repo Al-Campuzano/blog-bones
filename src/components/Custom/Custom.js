@@ -1,19 +1,20 @@
 import React from "react";
 import { Card, Subheading, Button, Caption } from "@shopify/polaris"
-import { useQuery, gql } from '@apollo/client';
+import { useQuery } from '@apollo/client';
+import POSTS_QUERY from './CustomQuery'
 
-const POSTS_QUERY = gql`
-  query {
-    microposts {
-      id
-      content
-      createdAt
-      user {
-        name
-      }
-    }
-  }
-`;
+// const POSTS_QUERY = gql`
+//   query {
+//     microposts {
+//       id
+//       content
+//       createdAt
+//       user {
+//         name
+//       }
+//     }
+//   }
+// `;
 
 function Custom() {
   const { loading, error, data } = useQuery(POSTS_QUERY);
@@ -29,7 +30,6 @@ function Custom() {
   return ( 
     <div style={{margin: '5%'}}>
       <Card title="Random micropost using Polaris">
-      {console.log(post)}
         <Card.Section>
           <Subheading>{post.user.name}</Subheading>
           <p>"{post.content}"</p>
