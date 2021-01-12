@@ -2,9 +2,11 @@ import React from 'react';
 import {mount} from '@shopify/react-testing';
 import wait from 'waait'
 import { act } from 'react-dom/test-utils';
-import Posts from '../Posts';
+import Custom from '../Custom';
 import {MockedProvider} from '@apollo/client/testing'
-import POSTS_QUERY from '../PostsQuery'
+import POSTS_QUERY from '../CustomQuery'
+import { PolarisTestProvider } from '@shopify/polaris';
+import enTranslations from '@shopify/polaris/locales/en.json';
 
 const mocks = 
     {
@@ -20,12 +22,14 @@ const mocks =
       },
     };
 
-describe('<Posts/>', () => {
+describe('<Custom />', () => {
     it('loads a series of posts from graphql endpoint', async ()=>{
     const wrapper = mount(
-      <MockedProvider mocks={[mocks]} addTypename={false}>
-        <Posts />
-      </MockedProvider>
+      <PolarisTestProvider i18n={enTranslations}>
+        <MockedProvider mocks={[mocks]} addTypename={false}>
+          <Custom />
+        </MockedProvider>
+      </PolarisTestProvider>
     );
     // This act stuff prevents an error in the test console
     await act(async () => {
@@ -34,16 +38,17 @@ describe('<Posts/>', () => {
     })
 
     await wrapper.update()
-    //console.log(wrapper.debug())
-    expect(wrapper.find(Posts)).toBeDefined();
+    expect(wrapper.find(Custom)).toBeDefined();
 
   });
 
     it('contains the expected data', async ()=>{
     const wrapper = mount(
-      <MockedProvider mocks={[mocks]} addTypename={false}>
-        <Posts />
-      </MockedProvider>
+      <PolarisTestProvider i18n={enTranslations}>
+        <MockedProvider mocks={[mocks]} addTypename={false}>
+          <Custom />
+        </MockedProvider>
+      </PolarisTestProvider>
     );
     // This act stuff prevents an error in the test console
     await act(async () => {
@@ -52,8 +57,7 @@ describe('<Posts/>', () => {
     })
 
     await wrapper.update()
-    //console.log(wrapper.debug())
-    expect(wrapper.find('article').text()).toContain('Content');
+    expect(wrapper.text()).toContain('Content');
 
   });
 });
